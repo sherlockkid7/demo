@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏[滑动门效果] 动画效果[无缝连接]</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- <link rel="stylesheet" href="./css/nav.css"> -->
+    <style>
+        header {
+            height: 75px;
+            background: url(./img/3S9sFMD.jpg) repeat-x;
+        }
+
+        header nav {
+            width: 80%;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        header ul li {
+            float: left;
+            padding-top: 21px;
+            margin-left: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            line-height: 33px;
+            background: url(./img/lTcb_ve.png) no-repeat;
+            font-size: 16px;
+            padding-left: 15px;
+        }
+
+        header ul li a:hover {
+            background-image: url(./img/3w4CwHw.png);
+        }
+
+        header ul li a:hover span {
+            background-image: url(./img/3w4CwHw.png);
+        }
+
+        header ul li a span {
+            display: block;
+            line-height: 33px;
+            background: url(./img/lTcb_ve.png) no-repeat right;
+            padding-right: 15px;
+        }
+
+        .box{
+            width: 1000px;
+            height:150px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .box ul{
+            animation: moving 5s linear infinite;
+            width: 200%;
+        }
+        @keyframes moving{
+            form{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-1000px);
+            }
+        }
+        .box ul li{
+            width: 200px;
+            height: 150px;
+            float: left;
+        }
+        .box ul li a img{
+            width: 100%;
+            height: 100%;
+        }
+        .box:hover ul{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header class="header">
+        <div class="navTop clearfix">
+            <div class="logo-pic">
+                <a href="">
+                </a>
+            </div>
+            <div class="navlist clearfix">
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="">电影</a></li>
+                    <li><a href="">影院</a></li>
+                    <li><a href="">演出</a></li>
+                    <li><a href="">榜单</a></li>
+                    <li><a href="">热点</a></li>
+                    <li><a href="">商城</a></li>
+                    <li>
+                        <a class="select" href="">
+                            APP下载
+                            <div>
+                                <a href="">
+                                    <img src="./img/app-link-icon.png" alt="">
+                                </a>
+                                <p>扫描下载APP</p>
+                                <p>选座更优惠</p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="searchBar">
+                <input type="text">
+            </div>
+        </div>
+    </header> -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>帮助与反馈</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>公众平台</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>微信支付</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="box">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/longmao.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/LongTailedBushtits.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/mao0.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/mao1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/TadamiTrain.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/longmao.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/LongTailedBushtits.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/mao0.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/mao1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./Anime/img/TadamiTrain.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
