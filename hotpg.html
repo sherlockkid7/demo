@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .left,
+        .right {
+            float: left;
+        }
+
+        .bod .left {
+            width: 140px;
+            margin-right: 10px;
+        }
+
+        .bod .left img {
+            width: 140px;
+        }
+
+        .bod .right {
+            width: 440px;
+        }
+
+        .bod .right img {
+            width: 440px;
+            display: none;
+        }
+
+        .bod .right .show {
+            display: inline-block;
+        }
+
+        .bod {
+            position: relative;
+        }
+
+        .bod .pointer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 3px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bod clearfix">
+        <div id="leftbox" class="left">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+        </div>
+        <div class="pointer">
+            <img src="./img/pointer.png" alt="">
+        </div>
+        <div id="rightbox" class="right">
+            <img src="img/1.jpg" alt="" class="show">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+
+        var leftBox = document.getElementById('leftbox'),
+            leftBg = leftBox.getElementsByTagName('img');
+        var rightBox = document.getElementById('rightbox'),
+            rightBg = rightBox.getElementsByTagName('img');
+        var listLength = leftBg.length;
+        var toArry = [0 ,82 ,164];
+
+        // for(var i = 0;i < listLength;i++){
+        //     leftBg[i].index = i;
+        //     (function(j){
+        //         leftBg[j].onmouseover = function mousemove(){
+        //         console.log(this.index);
+        //         for(var j = 0;j < rightBg.length; j++){
+        //             if(this.index == j){
+        //             rightBg[j].className = "show";
+        //         }else{
+        //             rightBg[j].className = "";
+        //         }
+        //         }
+        //     }
+        //     })(i);
+        // }
+
+        // 另外一种方法
+        for (var i = 0; i < listLength; i++) {
+            leftBg[i].onmouseover = mousemove;
+            leftBg[i].index = i;
+        }
+
+        function mousemove() {
+            console.log(this.index);
+            for (var j = 0; j < rightBg.length; j++) {
+                if (j == this.index) {
+                    rightBg[j].className = "show";
+
+                    nowTop = pointer.offsetTop; //当前高度
+                    newTop = toArry[j];
+                    movetoop = setInterval(pointermove, 100);
+                    // pointer 移动
+
+                } else {
+                    rightBg[j].className = "";
+                }
+            }
+        }
+
+
+        // pointer移动函数
+        var pointer = document.getElementsByClassName('pointer')[0];
+
+        var movetoop = setInterval(pointermove, 100);
+        var nowTop = 164; //当前高度
+        var newTop = 0; //目标高度
+        var speed = 4;//移动
+        function pointermove() {
+            // 从上往下移动
+            if (nowTop < newTop) {
+                nowTop += speed;
+            }
+            if (nowTop >= newTop) {
+                nowTop = newTop;
+                clearInterval(movetoop);
+            }
+            // 从下往上移动
+            if (nowTop > newTop) {
+                nowTop -= speed;
+            }
+            else {
+                nowTop = newTop;
+                clearInterval(movetoop);
+            }
+            pointer.style.top = nowTop + 'px';
+
+        }
+    </script>
+</body>
+
+</html>

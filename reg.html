@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bilibili登录页面</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/reg.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bg">
+            <img src="./img/rl_top.png" alt="">
+        </div>
+        <div class="title-line">
+            <h2>注册</h2>
+        </div>
+        <div class="form">
+            <div class="form-items haverror">
+                <input id="txtName" type="text" placeholder="昵称">
+                <p class="error">该昵称已被使用</p>
+            </div>
+            <div class="form-items haverror">
+                <input id="txtPassword" type="password" placeholder="密码（6-16个字符组成，区分大小写）">
+                <p class="error">密码强度不够</p>
+            </div>
+            <div class="form-items clearfix">
+                <div class="selected">
+                    <span>中国大陆</span>
+                    <ul class="select-list">
+                        <li>Lorem.</li>
+                        <li class="china">中国大陆</li>
+                        <li>Ex!</li>
+                        <li>Impedit?</li>
+                        <li>Deserunt?</li>
+                        <li>Ratione!</li>
+                        <li>Fuga?</li>
+                        <li>Ipsa.</li>
+                        <li>Officiis?</li>
+                        <li>Voluptatibus.</li>
+                        <li>Lorem.</li>
+                        <li>Voluptatum?</li>
+                        <li>Officiis!</li>
+                        <li>Ullam.</li>
+                        <li>Odio?</li>
+                        <li>Quae!</li>
+                        <li>In?</li>
+                        <li>Officia.</li>
+                        <li>Nostrum.</li>
+                        <li>Perferendis.</li>
+                    </ul>
+                </div>
+                <div class="phonemuber">
+                    <input id="txtPhone" type="text" placeholder="填写常用手机号">
+                </div>
+                <p class="error">该昵称已被使用</p>
+            </div>
+            <div class="form-items">
+                <input type="text" placeholder="请输入短信验证码">
+                <button>点击获取</button>
+            </div>
+            <div class="form-items useragreement">
+                <label>
+                    <input type="radio">
+                    <span class="re-radio"></span>
+                </label>
+                <span>我已同意<a href="">《哔哩哔哩弹幕网用户使用协议》</a>和<a href="">《哔哩哔哩隐私政策》</a></span>
+            </div>
+            <div class="regbtn">
+                <button>注册</button>
+                <p>
+                    <a href="">已有账号，直接登录&gt;</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            //文本框的验证
+            
+            // addCheck('txtPassword', /^\w{6,18}$/, '请输入密码');
+            // addCheck('txtPhone', /^[1-9]{1}\d{12}$/, '请输入手机号码');
+            // 第一个参数是元素的ID
+            // 第二个参数是正则表达式对象
+            // 第三个参数是文本框提示信息
+            // function addCheck(elementId, reg, tip) {
+                var element = document.getElementById('txtName');
+                // 当光标离开文本时
+                console.log(element);
+                element.onblur = function () {
+                    var reg = /^[\u4e00-\u9fa5]{1,5}$/;
+                    var tipele = this.nextElementSibling;
+                    // 检测输入的内容是否匹配正则表达式
+                    if (!reg.test(this.value)) {
+                        tipele.innerText = '请输入昵称';
+                        tipele.style.color = 'red';
+                        console.log(tipele);
+                    } else {
+                        tipele.innerText = '';
+                        tipele.style.color = '';
+                    }
+                }
+            }
+            // addCheck('txtName', /^[\u4e00-\u9fa5]{1,5}$/, '请输入昵称');
+       
+
+    </script>
+</body>
+
+</html>

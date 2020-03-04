@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        margin: 100px;
+        width: 350px;
+        height: 350px;
+        position: relative;
+    }
+    .small img{
+        width: 350px;
+        height: 350px;
+    }
+    .mask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background:url(../img/mask.png);
+        display: none;
+        cursor: move;
+    }
+    .big{
+        position: absolute;
+        top:0;
+        left: 360px;
+        width: 400px;
+        height: 400px;
+        display: none;
+        overflow: hidden;
+        border: 1px solid #ccc;
+    }
+    .big img{
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="small">
+            <img src="../img/yu.jpg" alt="">
+            <div class="mask"></div>
+        </div>
+        <div class="big">
+            <img src="../img/yu.jpg" alt="" width="800px" height="800px">
+        </div>
+    </div>
+    <script src="./common.js"></script>
+    <script>
+
+    var box = my$('box');
+    var smallBox = box.children[0];
+    var mask =smallBox.children[1];
+
+    var bigBox = box.children[1];
+    var bigImage = bigBox.children[0];
+    // 鼠标经过时，显示mask和bigBox ，鼠标离开时，隐藏
+    // ie存在兼容性问题，mouseover改成mouseenter,mouseout改成mouseleave
+    box.onmouseenter = function () {
+        mask.style.display = 'block';
+        bigBox.style.display = 'block';
+    }
+    box.onmouseleave = function () {
+        mask.style.display = 'none';
+        bigBox.style.display = 'none';
+    }
+    // 鼠标在盒子中移动时，让mask和鼠标一起移动
+    box.onmousemove = function (e) {
+        e = e || window.event;
+        //获取鼠标在盒子中的位置，就是mask的坐标
+        var maskX = getPage(e).pageX - box.offsetLeft;
+        var maskY = getPage(e).pageY - box.offsetTop;
+        // 让鼠标出现在mask中心点
+        maskX = maskX - mask.offsetWidth / 2;
+        maskY = maskY -mask.offsetHeight / 2;
+
+        //mask限制在box中移动
+        maskX = maskX < 0 ? 0 : maskX;
+        maskY = maskY < 0 ? 0 : maskY;
+        maskX = maskX > box.offsetWidth - mask.offsetWidth ? box.offsetWidth - mask.offsetWidth : maskX;
+        maskY = maskY > box.offsetHeight - mask.offsetHeight ? box.offsetHeight - mask.offsetHeight : maskY;
+
+        mask.style.left = maskX + 'px';
+        mask.style.top = maskY +'px';
+
+        // mask移动时，让大图片移动
+        // 求大图移动距离
+
+        // mask移动距离/mask最大移动距离 = bigImage移动距离/ bigImage最大移动距离
+        // mask最大移动距离
+        var maskMax = box.offsetWidth - mask.offsetWidth;
+        var bigImageMax = bigImage.offsetWidth - bigBox.offsetWidth;
+
+        var bigImageX = maskX * bigImageMax / maskMax;
+        var bigImageY = maskY * bigImageMax / maskMax;
+
+        bigImage.style.left = -bigImageX + 'px';
+        bigImage.style.top = -bigImageY + 'px';
+
+    }
+    </script>
+</body>
+</html>
