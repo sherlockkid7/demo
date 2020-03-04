@@ -1,0 +1,43 @@
+/* movie heder css */
+.header .navTop{
+    width: 1200px;
+    height: 80px;
+    background: #fff;
+    margin: 0 auto;
+    line-height: 80px;
+}
+.header .navTop .logo-pic {
+    float: left;
+    width: 133px;
+    height: 80px;
+    background: url(../img/mo-logo.png) no-repeat 0;
+}
+.header .logo img{
+    width: 133px;
+    height: 40px;
+}
+.header .navlist{
+    float: left;
+    margin:0 80px;
+}
+.header .navlist li{
+    float: left;
+    padding: 0 0 0 35px;
+}
+.header .navlist li a{
+    font-size: 18px;
+    color:#333;
+}
+.header .navlist li a:hover{
+    color:#ef4238;
+}
+
+.header .navlist li a.select:hover{
+    border: 1px solid #cccccc;
+    border-bottom: none;
+}
+
+.header .search .searchBar{
+    float: left;
+}
+/* movie header css end */

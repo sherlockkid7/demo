@@ -1,0 +1,134 @@
+@import"//at.alicdn.com/t/font_1443224_840h31bwfx.css";
+
+/*  公共样式 */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.left{
+    float: left;
+}
+.right{
+    float:right;
+}
+/* 公共样式结束 */
+/* 通用样式 */
+.sjicon{
+    color: #8c8c8c;
+    font-size: 14px;
+}
+.menuicon{
+    font-weight: bold;
+}
+.module{
+    height: 360px;
+    line-height: 360px;
+}
+.module:nth-of-type(even){
+    background:#fff9ed;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+/* 通用样式结束 */
+
+.header{
+    height: 60px;
+    line-height: 60px;
+    background: #181818;
+    font-size: 14px;
+}
+.header .headMain{
+    margin-left: 77px;  
+    color: #fff;
+}
+.header .headMain h1{
+    height: 60px;
+    margin-right: 75px;
+}
+.header .headMain h1 a{
+    display: inline-block;
+    width: 138px;
+    padding: 15px 0;
+
+}
+.header .headMain h1 a img{
+    width:138px;
+    height: 30px;
+    display: block;
+}
+.header .headMain h1 span{
+    display: none;
+}
+.header .headMain .navMenu nav a{
+    padding:20px;
+    box-sizing: border-box;
+}
+.header .headMain .navMenu nav a:hover{
+    background: #303030;
+}
+.header .headMain .navicon{
+    width: 20px;
+    margin-left: 60px;
+}
+.banner{
+    width: 100%;
+}
+.banner img{
+    width: 1349px;
+    display: block;
+}
+
+.conleft{
+    padding:44px 0;
+    box-sizing: border-box;
+}
+.conleft img{
+    width: 300px;
+    height: 272px;
+    display: block;
+}
+.conright{
+    width: 70%;
+    line-height: 2;
+    font-size: 14px;
+    font-weight: 600;
+}
+.conright .righttext{
+    padding: 65px 0 65px 70px;
+    box-sizing: border-box;
+}
+.conright .righttext h2{
+    font-size:36px;
+    color: #23a6d1;
+    font-weight: normal;
+}
+.conright .righttext p{
+    margin-bottom: 15px;
+}
+.moduletwo .container .conright .righttext{
+    padding-left: 0;
+    padding-right: 70px;
+}
+.footer{
+    height: 134px;
+}
+.footer .footcontent{
+    text-align: center;
+    font-size: 14px;
+    margin:40px 0;
+}
+.footer .footcontent nav{
+    margin-bottom: 20px;
+}
+.footer .footcontent nav a{
+    margin-left: 20px;
+}
+.footer .footcontent nav a:first-child{
+    margin: none;
+}
+.footer .footcontent p{
+    margin-bottom: 15px;
+}
